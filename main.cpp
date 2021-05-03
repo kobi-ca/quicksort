@@ -1,6 +1,13 @@
 #include <iostream>
 #include <vector>
 
+void print(const std::vector<int> &v) {
+    for(auto i : v) {
+        std::clog << i << ',';
+    }
+    std::clog << '\n';
+}
+
 void put_pivot_in_place(std::vector<int> &v, const size_t low_idx, const size_t high_idx, std::size_t pivot_idx){
     for(auto idx = low_idx; idx <= high_idx; ++idx) {
         auto& pivot = v[pivot_idx];
@@ -22,8 +29,10 @@ std::size_t get_pivot_idx(const size_t low_idx, const size_t high_idx)
 }
 
 [[nodiscard]]
-bool is_done(const std::size_t low_idx, const std::size_t high_idx) {
-    return low_idx >= high_idx;
+bool is_done(std::vector<int>& v, const std::size_t low_idx, const std::size_t high_idx) {
+    const bool equal_or_reversed = low_idx >= high_idx;
+    const bool two_left_ordered = (high_idx - low_idx == 1) && v[low_idx] <= v[high_idx];
+    return  equal_or_reversed || two_left_ordered;
 }
 
 void partition(std::vector<int>& v, const std::size_t low_idx, const std::size_t high_idx) {
@@ -32,20 +41,13 @@ void partition(std::vector<int>& v, const std::size_t low_idx, const std::size_t
 }
 
 void quicksort(std::vector<int>& v, const std::size_t low_idx, const std::size_t high_idx) {
-    if (is_done(low_idx, high_idx)) {
+    if (is_done(v, low_idx, high_idx)) {
         return;
     }
     partition(v, low_idx, high_idx);
     const auto mid = (high_idx + low_idx) / 2;
     quicksort(v, low_idx, mid);
-    quicksort(v, mid + 1, high_idx);
-}
-
-void print(const std::vector<int> &v) {
-    for(auto i : v) {
-        std::clog << i << ',';
-    }
-    std::clog << '\n';
+    quicksort(v, mid, high_idx);
 }
 
 int main() {
