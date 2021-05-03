@@ -41,6 +41,13 @@ void quicksort(std::vector<int>& v, const std::size_t low_idx, const std::size_t
     quicksort(v, mid + 1, high_idx);
 }
 
+void print(const std::vector<int> &v) {
+    for(auto i : v) {
+        std::clog << i << ',';
+    }
+    std::clog << '\n';
+}
+
 int main() {
     {
         auto v(std::vector<int>{2, 5, 9, 7, 4, 3, 6, 5, 1, 1, 10, 11});
@@ -50,7 +57,11 @@ int main() {
     {
         auto v(std::vector<int>{10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0});
         quicksort(v, 0, std::size(v) - 1);
-        std::clog << std::boolalpha << std::is_sorted(std::begin(v), std::end(v)) << '\n';
+        const auto s = std::is_sorted(std::begin(v), std::end(v));
+        std::clog << std::boolalpha << s << '\n';
+        if(!s) {
+            print(v);
+        }
     }
     {
         auto v(std::vector<int>{10, 10, 10, 10, 10});
@@ -70,7 +81,11 @@ int main() {
     {
         auto v(std::vector<int>{10, 10, 10, 9, 9, 9, 8, 8, 7, 6, 7, 8, 9, 10, 11});
         quicksort(v, 0, std::size(v) - 1);
-        std::clog << std::boolalpha << std::is_sorted(std::begin(v), std::end(v)) << '\n';
+        const auto s = std::is_sorted(std::begin(v), std::end(v));
+        std::clog << std::boolalpha << s << '\n';
+        if(!s) {
+            print(v);
+        }
     }
     return 0;
 }
