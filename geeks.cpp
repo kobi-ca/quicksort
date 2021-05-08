@@ -21,7 +21,8 @@ to left of pivot and all greater elements to right
 of pivot */
 int partition (int arr[], int low, int high)
 {
-    int pivot = arr[high]; // pivot
+    auto pivot_idx = (high + low) / 2;
+    int pivot = arr[pivot_idx]; // pivot
     int i = (low - 1); // Index of smaller element and indicates the right position of pivot found so far
 
     for (int j = low; j <= high - 1; j++)
@@ -33,7 +34,7 @@ int partition (int arr[], int low, int high)
             swap(&arr[i], &arr[j]);
         }
     }
-    swap(&arr[i + 1], &arr[high]);
+    swap(&arr[i + 1], &arr[pivot_idx]);
     return (i + 1);
 }
 
