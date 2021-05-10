@@ -20,18 +20,13 @@ std::vector<int>::iterator put_pivot_in_place(std::vector<int> &v, std::vector<i
         if (iter == pivot) {
             break;
         }
-        std::swap(*lowest, *iter);
+        if (lowest != iter) {
+            std::swap(*lowest, *iter);
+        }
         ++lowest; ++iter;
     }
     std::swap(*lowest, *pivot);
     return lowest;
-}
-
-
-[[nodiscard]]
-std::size_t get_pivot_idx(const size_t low_idx, const size_t high_idx)
-{
-    return (high_idx + low_idx) / 2;
 }
 
 [[nodiscard]]
