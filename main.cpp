@@ -28,11 +28,8 @@ void quicksort_impl(std::span<int> v) {
         return;
     }
     auto p = put_pivot_in_place(v);
-    if (!p) {
-        ++p;
-    }
     quicksort_impl(v.first(p));
-    quicksort_impl(v.last(v.size() - p));
+    quicksort_impl(v.last(v.size() - p - 1));
 }
 
 void quicksort(std::vector<int>& v) {
