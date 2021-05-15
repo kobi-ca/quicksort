@@ -15,7 +15,9 @@ auto put_pivot_in_place(std::span<int> v) {
     int lowest = 0;
     for(auto& elem : v) {
         if (elem < pivot) {
-            std::swap(elem, v[lowest]);
+            if (elem != v[lowest]) {
+                std::swap(elem, v[lowest]);
+            }
             ++lowest;
         }
     }
