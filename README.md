@@ -28,7 +28,9 @@ same as above with O3
 
 separate - almost the same
 * gcc - geeks only https://quick-bench.com/q/jZKfw4_0hnzyHAorw9PJJmvgZRY
-* clang - https://quick-bench.com/q/Autwqj7DfGkR_zoaM1WRcGWCS1o
+* gcc - sort only https://quick-bench.com/q/Autwqj7DfGkR_zoaM1WRcGWCS1o
+* clang - sort only https://quick-bench.com/q/OUasLeK11DKF4i-9z8gXG3qDrpQ  
+* clang - geeks only https://quick-bench.com/q/TbmXwGJxQuLZLJ7KJhaYtxkubV8  (a bit slower than sort)  
 
 gcc - sort running before geeks
 * https://quick-bench.com/q/gD8UYhGRlBOQVQBzMDE5MA741zQ 
