@@ -37,3 +37,7 @@ gcc - sort running before geeks
 
 gcc sort - remove const& from func param a bit slower. so const does help  
 * https://quick-bench.com/q/v9dTmAC3ghfcdA16kWUrjZWwe9M 
+
+Godbolt
+* gcc sort https://godbolt.org/z/hxvWTz86E 
+* gcc geeks https://godbolt.org/z/vsErEeb7W 
