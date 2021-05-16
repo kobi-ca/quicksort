@@ -8,4 +8,4 @@ needed to install gcc/g++ 10 to get span<> header
 * gcc https://quick-bench.com/q/kHUzN7RX8ru2S4w3YqQd62uKSic  
 
 with is_sorted
-* gcc https://quick-bench.com/q/rl0q6WdjTQGaiGLXEIlZzKpCXOQ
+* gcc https://quick-bench.com/q/rl0q6WdjTQGaiGLXEIlZzKpCXOQ  

@@ -13,11 +13,10 @@ void print(const std::vector<int> &v) {
 auto put_pivot_in_place(std::span<int> v) {
     auto& pivot = v.back();
     int lowest = 0;
-    for(auto& elem : v) {
+    std::span<int> without_pivot(v.first(v.size() - 1));
+    for(auto& elem : without_pivot) {
         if (elem < pivot) {
-            if (elem != v[lowest]) {
-                std::swap(elem, v[lowest]);
-            }
+            std::swap(elem, v[lowest]);
             ++lowest;
         }
     }
