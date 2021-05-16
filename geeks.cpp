@@ -62,26 +62,80 @@ void printArray(int arr[], int size)
     int i;
     for (i = 0; i < size; i++)
         cout << arr[i] << " ";
-    cout << endl;
+    cout << '\n';
 }
 
 // Driver Code
 int main()
 {
+    auto start = std::chrono::steady_clock::now();
     {
-        int arr[] = {10, 7, 8, 9, 1, 5};
+        int arr[] = {2, 5, 9, 7, 4, 3, 6, 5, 1, 1, 10, 11};
         int n = sizeof(arr) / sizeof(arr[0]);
         quickSort(arr, 0, n - 1);
-        cout << "Sorted array: \n";
-        printArray(arr, n);
+        const auto s = std::is_sorted(std::begin(arr), std::end(arr));
+        std::clog << std::boolalpha << s << '\n';
+        if (!s) {
+            printArray(arr, n);
+        }
     }
+
+    {
+        int arr[] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+        int n = sizeof(arr) / sizeof(arr[0]);
+        quickSort(arr, 0, n - 1);
+        const auto s = std::is_sorted(std::begin(arr), std::end(arr));
+        std::clog << std::boolalpha << s << '\n';
+        if (!s) {
+            printArray(arr, n);
+        }
+    }
+
+    {
+        int arr[] = {10, 10, 10, 10, 10};
+        int n = sizeof(arr) / sizeof(arr[0]);
+        quickSort(arr, 0, n - 1);
+        const auto s = std::is_sorted(std::begin(arr), std::end(arr));
+        std::clog << std::boolalpha << s << '\n';
+        if (!s) {
+            printArray(arr, n);
+        }
+    }
+
+    {
+        int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int n = sizeof(arr) / sizeof(arr[0]);
+        quickSort(arr, 0, n - 1);
+        const auto s = std::is_sorted(std::begin(arr), std::end(arr));
+        std::clog << std::boolalpha << s << '\n';
+        if (!s) {
+            printArray(arr, n);
+        }
+    }
+
+    {
+        int arr[] = {10, 10, 10, 9, 9, 9, 8, 8, 7, 6};
+        int n = sizeof(arr) / sizeof(arr[0]);
+        quickSort(arr, 0, n - 1);
+        const auto s = std::is_sorted(std::begin(arr), std::end(arr));
+        std::clog << std::boolalpha << s << '\n';
+        if (!s) {
+            printArray(arr, n);
+        }
+    }
+
     {
         int arr[] = {10, 10, 10, 9, 9, 9, 8, 8, 7, 6, 7, 8, 9, 10, 11};
         int n = sizeof(arr) / sizeof(arr[0]);
         quickSort(arr, 0, n - 1);
-        cout << "Sorted array: \n";
-        printArray(arr, n);
+        const auto s = std::is_sorted(std::begin(arr), std::end(arr));
+        std::clog << std::boolalpha << s << '\n';
+        if (!s) {
+            printArray(arr, n);
+        }
     }
+    auto end = std::chrono::steady_clock::now();
+    std::clog << "diff " << (end - start).count() << '\n';
     return 0;
 }
 

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <span>
+#include <chrono>
 
 void print(const std::vector<int> &v) {
     for(auto i : v) {
@@ -39,6 +40,7 @@ void quicksort(std::vector<int>& v) {
 }
 
 int main() {
+    auto start = std::chrono::steady_clock::now();
 
     {
         auto v(std::vector<int>{2, 5, 9, 7, 4, 3, 6, 5, 1, 1, 10, 11});
@@ -92,5 +94,7 @@ int main() {
             print(v);
         }
     }
+    auto end = std::chrono::steady_clock::now();
+    std::clog << "diff " << (end - start).count() << '\n';
     return 0;
 }
