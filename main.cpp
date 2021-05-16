@@ -10,7 +10,7 @@ void print(const std::vector<int> &v) {
 }
 
 [[nodiscard]]
-auto put_pivot_in_place(std::span<int> v) {
+auto put_pivot_in_place(const std::span<int>& v) {
     auto& pivot = v.back();
     int lowest = 0;
     std::span<int> without_pivot(v.first(v.size() - 1));
@@ -24,7 +24,7 @@ auto put_pivot_in_place(std::span<int> v) {
     return lowest;
 }
 
-void quicksort_impl(std::span<int> v) {
+void quicksort_impl(const std::span<int>& v) {
     if (v.size() <= 1) {
         return;
     }
