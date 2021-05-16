@@ -28,7 +28,7 @@ void quicksort_impl(const std::span<int>& v) {
     if (v.size() <= 1) {
         return;
     }
-    auto p = put_pivot_in_place(v);
+    const auto p = put_pivot_in_place(v);
     quicksort_impl(v.first(p));
     quicksort_impl(v.last(v.size() - p - 1));
 }

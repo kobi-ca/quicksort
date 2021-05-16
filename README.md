@@ -9,3 +9,29 @@ needed to install gcc/g++ 10 to get span<> header
 
 with is_sorted
 * gcc https://quick-bench.com/q/rl0q6WdjTQGaiGLXEIlZzKpCXOQ  
+
+Bypassing span, using to_array
+* clang - https://quick-bench.com/q/e35tkMiRGtyvjJR88nWJ6gLN_So  
+* clang - calling _impl directly - https://quick-bench.com/q/X0C3OQdHw_o8YddIejgqdAtFLJw  
+
+O2 - no const calling _impl directly (clang is faster)
+* clang - https://quick-bench.com/q/hh3ySEqyXD2hu6Yx0OnHv6AVbbg    
+* gcc - https://quick-bench.com/q/Im74_N2rgMEpQbQOw_unMeQPDnk
+
+more consts O2 - all const calling _impl directly (gcc - same, clang - worse )
+* gcc https://quick-bench.com/q/C6o-TlRfUrpEEc2nJVe3xGs8E8g  
+* clang https://quick-bench.com/q/1QoopLTA8DQE-JFEDrKO9k2DaME 
+
+same as above with O3
+* clang - https://quick-bench.com/q/4KJyAHo7f9hbGUUq8JX6r-oMG2Y    
+* gcc - https://quick-bench.com/q/7RpBwHkH2RAYecZRC5QuntpQ1Jk
+
+separate - almost the same
+* gcc - geeks only https://quick-bench.com/q/jZKfw4_0hnzyHAorw9PJJmvgZRY
+* clang - https://quick-bench.com/q/Autwqj7DfGkR_zoaM1WRcGWCS1o
+
+gcc - sort running before geeks
+* https://quick-bench.com/q/gD8UYhGRlBOQVQBzMDE5MA741zQ 
+
+gcc sort - remove const& from func param a bit slower. so const does help  
+* https://quick-bench.com/q/v9dTmAC3ghfcdA16kWUrjZWwe9M 
