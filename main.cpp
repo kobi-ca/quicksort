@@ -42,12 +42,12 @@ void quicksort(std::vector<int>& v) {
 int main() {
     auto start = std::chrono::steady_clock::now();
 
-    for (int i = 0; i < 1000; ++i) {
+    for (int i = 0; i < 1'000'000; ++i) {
         {
             auto v(std::vector<int>{2, 5, 9, 7, 4, 3, 6, 5, 1, 1, 10, 11});
             quicksort(v);
             const auto s = std::is_sorted(std::begin(v), std::end(v));
-            std::clog << std::boolalpha << s << '\n';
+            //std::clog << std::boolalpha << s << '\n';
             if (!s) {
                 print(v);
             }
@@ -57,7 +57,7 @@ int main() {
             auto v(std::vector<int>{10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0});
             quicksort(v);
             const auto s = std::is_sorted(std::begin(v), std::end(v));
-            std::clog << std::boolalpha << s << '\n';
+            //std::clog << std::boolalpha << s << '\n';
             if (!s) {
                 print(v);
             }
@@ -65,18 +65,18 @@ int main() {
         {
             auto v(std::vector<int>{10, 10, 10, 10, 10});
             quicksort(v);
-            std::clog << std::boolalpha << std::is_sorted(std::begin(v), std::end(v)) << '\n';
+            //std::clog << std::boolalpha << std::is_sorted(std::begin(v), std::end(v)) << '\n';
         }
         {
             auto v(std::vector<int>{1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
             quicksort(v);
-            std::clog << std::boolalpha << std::is_sorted(std::begin(v), std::end(v)) << '\n';
+            //std::clog << std::boolalpha << std::is_sorted(std::begin(v), std::end(v)) << '\n';
         }
         {
             auto v(std::vector<int>{10, 10, 10, 9, 9, 9, 8, 8, 7, 6});
             quicksort(v);
             const auto s = std::is_sorted(std::begin(v), std::end(v));
-            std::clog << std::boolalpha << s << '\n';
+            //std::clog << std::boolalpha << s << '\n';
             if (!s) {
                 print(v);
             }
@@ -85,7 +85,7 @@ int main() {
             auto v(std::vector<int>{10, 10, 10, 9, 9, 9, 8, 8, 7, 6, 7, 8, 9, 10, 11});
             quicksort(v);
             const auto s = std::is_sorted(std::begin(v), std::end(v));
-            std::clog << std::boolalpha << s << '\n';
+            //std::clog << std::boolalpha << s << '\n';
             if (!s) {
                 print(v);
             }

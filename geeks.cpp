@@ -69,13 +69,13 @@ void printArray(int arr[], int size)
 int main()
 {
     auto start = std::chrono::steady_clock::now();
-    for (int i = 0; i < 1000; ++i) {
+    for (int i = 0; i < 1'000'000; ++i) {
         {
             int arr[] = {2, 5, 9, 7, 4, 3, 6, 5, 1, 1, 10, 11};
             int n = sizeof(arr) / sizeof(arr[0]);
             quickSort(arr, 0, n - 1);
             const auto s = std::is_sorted(std::begin(arr), std::end(arr));
-            std::clog << std::boolalpha << s << '\n';
+            //std::clog << std::boolalpha << s << '\n';
             if (!s) {
                 printArray(arr, n);
             }
@@ -86,7 +86,7 @@ int main()
             int n = sizeof(arr) / sizeof(arr[0]);
             quickSort(arr, 0, n - 1);
             const auto s = std::is_sorted(std::begin(arr), std::end(arr));
-            std::clog << std::boolalpha << s << '\n';
+            //std::clog << std::boolalpha << s << '\n';
             if (!s) {
                 printArray(arr, n);
             }
@@ -97,7 +97,7 @@ int main()
             int n = sizeof(arr) / sizeof(arr[0]);
             quickSort(arr, 0, n - 1);
             const auto s = std::is_sorted(std::begin(arr), std::end(arr));
-            std::clog << std::boolalpha << s << '\n';
+            //std::clog << std::boolalpha << s << '\n';
             if (!s) {
                 printArray(arr, n);
             }
@@ -108,7 +108,7 @@ int main()
             int n = sizeof(arr) / sizeof(arr[0]);
             quickSort(arr, 0, n - 1);
             const auto s = std::is_sorted(std::begin(arr), std::end(arr));
-            std::clog << std::boolalpha << s << '\n';
+            //std::clog << std::boolalpha << s << '\n';
             if (!s) {
                 printArray(arr, n);
             }
@@ -119,7 +119,7 @@ int main()
             int n = sizeof(arr) / sizeof(arr[0]);
             quickSort(arr, 0, n - 1);
             const auto s = std::is_sorted(std::begin(arr), std::end(arr));
-            std::clog << std::boolalpha << s << '\n';
+            //std::clog << std::boolalpha << s << '\n';
             if (!s) {
                 printArray(arr, n);
             }
@@ -130,7 +130,7 @@ int main()
             int n = sizeof(arr) / sizeof(arr[0]);
             quickSort(arr, 0, n - 1);
             const auto s = std::is_sorted(std::begin(arr), std::end(arr));
-            std::clog << std::boolalpha << s << '\n';
+            //std::clog << std::boolalpha << s << '\n';
             if (!s) {
                 printArray(arr, n);
             }
