@@ -53,11 +53,6 @@ int main() {
     }
 
     {
-        auto v(std::vector<int>{2, 5, 9, 7, 4, 3, 6, 5, 1, 1, 10, 11});
-        quicksort(v);
-        std::clog << std::boolalpha << std::is_sorted(std::begin(v), std::end(v)) << '\n';
-    }
-    {
         auto v(std::vector<int>{10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0});
         quicksort(v);
         const auto s = std::is_sorted(std::begin(v), std::end(v));
