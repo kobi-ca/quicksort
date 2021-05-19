@@ -41,3 +41,4 @@ gcc sort - remove const& from func param a bit slower. so const does help
 Godbolt
 * gcc sort https://godbolt.org/z/hxvWTz86E 
 * gcc geeks https://godbolt.org/z/vsErEeb7W 
+* diff https://godbolt.org/z/q7T8G3jM3  
