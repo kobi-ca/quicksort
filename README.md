@@ -43,7 +43,7 @@ Godbolt
 * gcc geeks https://godbolt.org/z/vsErEeb7W 
 * diff https://godbolt.org/z/q7T8G3jM3  
 
-* 5/22/2021 after working with Jason Turner on Discord.
+5/22/2021 after working with Jason Turner on Discord.
 * He found out that using iterator instead int for "lower" is much faster
 * the const & for span is really messing up things and is slower
 * clang - with all elements (fastest) - https://quick-bench.com/q/U-wfgBGsFVn7uUmBjNVZre7IK3E
