@@ -42,3 +42,10 @@ Godbolt
 * gcc sort https://godbolt.org/z/hxvWTz86E 
 * gcc geeks https://godbolt.org/z/vsErEeb7W 
 * diff https://godbolt.org/z/q7T8G3jM3  
+
+* 5/22/2021 after working with Jason Turner on Discord.
+* He found out that using iterator instead int for "lower" is much faster
+* the const & for span is really messing up things and is slower
+* clang - with all elements (fastest) - https://quick-bench.com/q/U-wfgBGsFVn7uUmBjNVZre7IK3E
+* gcc - with all elements (fast) - https://quick-bench.com/q/Hqg-jpftC_acXRNMkhVyw0TUv10
+* gcc - excluding pivot (still fast) - https://quick-bench.com/q/9Fw0tnbM6Etf-2NP-hb1FiP-GXc 

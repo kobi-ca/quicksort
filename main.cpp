@@ -11,27 +11,33 @@ void print(const std::vector<int> &v) {
 }
 
 [[nodiscard]]
-auto put_pivot_in_place(const std::span<int>& v) {
+auto put_pivot_in_place(std::span<int> v) {
     auto& pivot = v.back();
-    int lowest = 0;
+    auto lowest = v.begin(); // this makes a huge diff. (Jason Turner found it)
+                             // int vs iterator. iterator is faster
+    // for GCC have this
+    // for clang, just iterate over entire v even if looking
+    //   at the last one (pivot) is redundant
     const std::span<int> without_pivot(v.first(v.size() - 1));
     for(auto& elem : without_pivot) {
+    //for(auto& elem : v) { // enable this for clang
         if (elem < pivot) {
-            std::swap(elem, v[lowest]);
+            std::swap(elem, *lowest);
             ++lowest;
         }
     }
-    std::swap(pivot, v[lowest]);
+    std::swap(pivot, *lowest);
     return lowest;
 }
 
-void quicksort_impl(const std::span<int>& v) {
+void quicksort_impl(std::span<int> v) {
     if (v.size() <= 1) {
         return;
     }
     const auto p = put_pivot_in_place(v);
-    quicksort_impl(v.first(p));
-    quicksort_impl(v.last(v.size() - p - 1));
+    const auto place = std::distance(v.begin(), p);
+    quicksort_impl(v.first(place));
+    quicksort_impl(v.last(v.size() - place - 1));
 }
 
 void quicksort(std::vector<int>& v) {
