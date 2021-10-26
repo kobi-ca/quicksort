@@ -8,6 +8,7 @@ new with span
 needed to install gcc/g++ 10 to get span<> header  
 * clang https://quick-bench.com/q/XHbMmCyOVBdaBou4HXwjm4fMUH0    
 * gcc https://quick-bench.com/q/kHUzN7RX8ru2S4w3YqQd62uKSic  
+* gcc that is matching clang code https://quick-bench.com/q/AuRCkW6mgAKrdNrzcGDGOwKm6Gk
 
 with is_sorted
 * gcc https://quick-bench.com/q/rl0q6WdjTQGaiGLXEIlZzKpCXOQ  
