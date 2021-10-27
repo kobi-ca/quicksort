@@ -49,7 +49,7 @@ more consts O2 - all const calling _impl directly (gcc - same, clang - worse )
 * gcc https://quick-bench.com/q/C6o-TlRfUrpEEc2nJVe3xGs8E8g  
 * clang https://quick-bench.com/q/1QoopLTA8DQE-JFEDrKO9k2DaME 
 
-same as above with O3 (without pivor compare)
+O3 with const std::span<> long arrays (without pivot compare)
 * clang - https://quick-bench.com/q/4KJyAHo7f9hbGUUq8JX6r-oMG2Y    
 * gcc - https://quick-bench.com/q/7RpBwHkH2RAYecZRC5QuntpQ1Jk
 
