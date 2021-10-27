@@ -78,5 +78,8 @@ Godbolt
 * He found out that using iterator instead int for "lower" is much faster
 * the const & for span is really messing up things and is slower
 * clang - with all elements (fastest) - https://quick-bench.com/q/U-wfgBGsFVn7uUmBjNVZre7IK3E
-* gcc - with all elements (fast) - https://quick-bench.com/q/Hqg-jpftC_acXRNMkhVyw0TUv10
+* gcc - 10.1 with all elements (fast) - https://quick-bench.com/q/Hqg-jpftC_acXRNMkhVyw0TUv10
+* gcc - 10.2 with all elements fast 1.2 https://quick-bench.com/q/MqdF-v8BG39a1LRiC8aCcK-RFVk
 * gcc - excluding pivot (still fast) - https://quick-bench.com/q/9Fw0tnbM6Etf-2NP-hb1FiP-GXc 
+* gcc - 10.3 excluding pivot 10.3 https://quick-bench.com/q/SKO6R1gX5sMQgkLd86ruBgPiXgw 
+* gcc - 10.3 all elements https://quick-bench.com/q/VQKNRWkR6M1jL4ZAT0B2OYSDvIY a bit slower
