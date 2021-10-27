@@ -9,7 +9,7 @@ needed to install gcc/g++ 10 to get span<> header
 * clang https://quick-bench.com/q/XHbMmCyOVBdaBou4HXwjm4fMUH0    
 * gcc https://quick-bench.com/q/kHUzN7RX8ru2S4w3YqQd62uKSic  
 * gcc that is matching clang code https://quick-bench.com/q/AuRCkW6mgAKrdNrzcGDGOwKm6Gk
-* clang with longer array - https://quick-bench.com/q/bvxPs7WGljvdIiknvJKbqHq-8Fs clang is now also worse
+* clang with longer array - https://quick-bench.com/q/lyhlujUDBvQCyFViySM4p6BSGGg clang is now also worse
 * gcc with longer array https://quick-bench.com/q/bvxPs7WGljvdIiknvJKbqHq-8Fs
 
 with is_sorted
@@ -22,6 +22,8 @@ Bypassing span, using to_array
 O2 - no const calling _impl directly (clang is faster)
 * clang - https://quick-bench.com/q/hh3ySEqyXD2hu6Yx0OnHv6AVbbg    
 * gcc - https://quick-bench.com/q/Im74_N2rgMEpQbQOw_unMeQPDnk
+* gcc - long array, with pivot - https://quick-bench.com/q/vIaSrtw89W4bqUGVzixnDwaqMZM
+* clang - long array, with pivot - https://quick-bench.com/q/y2Qi_EHphbthuWXX0pfQJ-5Zey4
 
 more consts O2 - all const calling _impl directly (gcc - same, clang - worse )
 * gcc https://quick-bench.com/q/C6o-TlRfUrpEEc2nJVe3xGs8E8g  
