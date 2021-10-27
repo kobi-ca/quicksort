@@ -29,6 +29,7 @@ Bypassing span, using to_array - without pivot, O3 long arrays (ignore for now)
 
 without pivot compare, span by value O3 long arrays
 * clang - https://quick-bench.com/q/AT8Yx_JK7K7i1IntPsag1d8TKFw
+* clang with libc++ - https://quick-bench.com/q/bMdOysOO262Ewci2BMjRQMAIUZw 1.1 faster!
 * gcc - https://quick-bench.com/q/1XcVYjj1RUZtG7gf7h5RAUSur8M
 
 without pivot compare, span by const ref O3 long arrays
