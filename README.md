@@ -1,23 +1,42 @@
 Original page from geeksforgeeks https://www.geeksforgeeks.org/quick-sort/
 
-Benchmarks using online quick-bench.com:  
+Benchmarks using online quick-bench.com:
+
+Using lambda to compare - 1.8 or 2 slower
 * clang https://quick-bench.com/q/noQrwHes7bostcZWf-Re-UYNupI  
 * gcc https://quick-bench.com/q/du473pP_5EtjkDERriGo6lAPhqw  
 
-new with span  
+with do-not-optimize (is_sorted)
+* gcc https://quick-bench.com/q/rl0q6WdjTQGaiGLXEIlZzKpCXOQ  
+
+new with span passed by value
 needed to install gcc/g++ 10 to get span<> header  
+Short arrays - clang is better
 * clang https://quick-bench.com/q/XHbMmCyOVBdaBou4HXwjm4fMUH0    
-* gcc https://quick-bench.com/q/kHUzN7RX8ru2S4w3YqQd62uKSic  
+* gcc https://quick-bench.com/q/kHUzN7RX8ru2S4w3YqQd62uKSic  (has different code from clang - has if (!p))
 * gcc that is matching clang code https://quick-bench.com/q/AuRCkW6mgAKrdNrzcGDGOwKm6Gk
+
+longer arrays - clang is also worse now
 * clang with longer array - https://quick-bench.com/q/lyhlujUDBvQCyFViySM4p6BSGGg clang is now also worse
 * gcc with longer array https://quick-bench.com/q/bvxPs7WGljvdIiknvJKbqHq-8Fs
 
-with is_sorted
-* gcc https://quick-bench.com/q/rl0q6WdjTQGaiGLXEIlZzKpCXOQ  
+longer arrays with const& span<>
+* clang - https://quick-bench.com/q/J4LSs7P0Sah7w2cgzLb3W1Z2eZ0
+* gcc - https://quick-bench.com/q/3I3kJYTY-SFe6wCiJ9JjbhLqNW4
 
-Bypassing span, using to_array
-* clang - https://quick-bench.com/q/e35tkMiRGtyvjJR88nWJ6gLN_So  
+Bypassing span, using to_array - without pivot, O3 long arrays (ignore for now)
+* clang - https://quick-bench.com/q/e35tkMiRGtyvjJR88nWJ6gLN_So  (ignore it)
+
+without pivot compare, span by value O3 long arrays
+* clang - https://quick-bench.com/q/AT8Yx_JK7K7i1IntPsag1d8TKFw
+* gcc - https://quick-bench.com/q/1XcVYjj1RUZtG7gf7h5RAUSur8M
+
+without pivot compare, span by const ref O3 long arrays
+* clang - https://quick-bench.com/q/4KJyAHo7f9hbGUUq8JX6r-oMG2Y
+* gcc - https://quick-bench.com/q/7RpBwHkH2RAYecZRC5QuntpQ1Jk
+
 * clang - calling _impl directly - https://quick-bench.com/q/X0C3OQdHw_o8YddIejgqdAtFLJw  
+* gcc - matching code to clang - https://quick-bench.com/q/K04BJk3NrSYG4ViTwoTUbGyIL_w
 
 O2 - no const calling _impl directly (clang is faster)
 * clang - https://quick-bench.com/q/hh3ySEqyXD2hu6Yx0OnHv6AVbbg    
