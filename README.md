@@ -53,6 +53,10 @@ O3 with const std::span<> long arrays (without pivot compare)
 * clang - https://quick-bench.com/q/4KJyAHo7f9hbGUUq8JX6r-oMG2Y    
 * gcc - https://quick-bench.com/q/7RpBwHkH2RAYecZRC5QuntpQ1Jk
 
+O3 with const std::span<> long arrays (with pivot compare) shows worse than without pivot compare
+* clang - https://quick-bench.com/q/X_bb82mfXbqXW--FZG8JopM3oWI
+* gcc - https://quick-bench.com/q/5zEi4fMrGShEjPamPch65N2yV9c
+
 separate - almost the same
 * gcc - geeks only https://quick-bench.com/q/jZKfw4_0hnzyHAorw9PJJmvgZRY
 * gcc - sort only https://quick-bench.com/q/Autwqj7DfGkR_zoaM1WRcGWCS1o
